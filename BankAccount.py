@@ -31,3 +31,6 @@ class BankAccount:
               f"Customer Name: {self.customer_name}\n"
               f"Current Balance: {self.current_balance}\n"
               f"Minimum Balance: {self.minimum_balance}")
+
+    def get_account_number(self):
+        return self.__account_number
