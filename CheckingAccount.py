@@ -15,12 +15,14 @@ class CheckingAccount(BankAccount):
     def transfer(self, transfer_amount, target_account):
         """Move money from one account to another as long as it is within the allowable amount"""
         if transfer_amount > self.transfer_limit:
-            print(f"Transfer Denied: ${transfer_amount:,.2f} exceeds the "
+            print(f"Transfer Denied: ${transfer_amount} exceeds the "
                   f"per-transfer limit of ${self.transfer_limit:,.2f}.")
             return False
-        if self.withdraw(target_account):
+        starting_balance = self.current_balance
+        self.withdraw(transfer_amount)
+        if self.current_balance < starting_balance:
             target_account.deposit(transfer_amount)
-            print(f"Transferred ${transfer_amount:,.2f} to account "
+            print(f"Transferred ${transfer_amount} to account "
                   f"{target_account.get_account_number()} ")
             return True
         return False
