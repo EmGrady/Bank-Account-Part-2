@@ -1,5 +1,5 @@
 # ITSC 3155: Software Engineering
-# Assignment: BankAccount Python Class
+# Assignment: BankAccount Part 2
 class BankAccount:
     bankTitle = "Bank of America"
 
