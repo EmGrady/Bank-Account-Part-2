@@ -18,7 +18,9 @@ class CheckingAccount(BankAccount):
             print(f"Transfer Denied: ${transfer_amount} exceeds the "
                   f"per-transfer limit of ${self.transfer_limit:,.2f}.")
             return False
-        if self.withdraw(target_account):
+        starting_balance = self.current_balance
+        self.withdraw(transfer_amount)
+        if self.current_balance < starting_balance:
             target_account.deposit(transfer_amount)
             print(f"Transferred ${transfer_amount} to account "
                   f"{target_account.get_account_number()} ")
