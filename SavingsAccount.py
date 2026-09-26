@@ -1,3 +1,6 @@
+# Group Assignment for ITSC 3155 Software Engineering
+# Group Members: Morgan Grady and Kirk Patton
+
 
 from BankAccount import BankAccount
 
