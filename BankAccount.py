@@ -1,6 +1,5 @@
 # ITSC 3155: Software Engineering
-# Assignment: BankAccount Part 2
-
+# Assignment: BankAccount Python Class
 class BankAccount:
     bankTitle = "Bank of America"
 
@@ -8,8 +7,8 @@ class BankAccount:
         self.customer_name = customer_name
         self.current_balance = current_balance
         self.minimum_balance = minimum_balance
-        self.__current_balance = current_balance
-        self._routing_balance = routing_number
+        self.__account_number = account_number
+        self._routing_number = routing_number
 
     def deposit(self, deposit_amount):
         self.current_balance += deposit_amount
